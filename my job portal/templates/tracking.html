@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container mt-5">
+    <h3 class="fw-bold mb-4">Application Tracking</h3>
+    
+    <div class="card shadow-sm border-0">
+        <div class="table-responsive">
+            <table class="table table-hover align-middle mb-0">
+                <thead class="table-light">
+                    <tr>
+                        <th>Job Role</th>
+                        <th>Company</th>
+                        <th>Date Applied</th>
+                        <th>Status</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for app in apps %}
+                    <tr>
+                        <td><strong>{{ app.job }}</strong></td>
+                        <td>Siddharth Smart City</td>
+                        <td>{{ app.date }}</td>
+                        <td>
+                            <span class="badge rounded-pill bg-info text-dark">{{ app.status }}</span>
+                        </td>
+                        <td><button class="btn btn-sm btn-outline-secondary">Details</button></td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+{% endblock %}

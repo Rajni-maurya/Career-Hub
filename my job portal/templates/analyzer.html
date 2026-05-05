@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container mt-5">
+    <div class="text-center mb-4">
+        <h2 class="fw-bold">AI Resume Analyzer</h2>
+        <p class="text-muted">Apne resume ka ATS score check karein aur suggestions payein.</p>
+    </div>
+    
+    <div class="row justify-content-center">
+        <div class="col-lg-10">
+            <div class="card shadow-lg border-0 rounded-4 overflow-hidden">
+                <div class="ratio ratio-16x9" style="height: 700px;">
+                    <iframe src="https://resume-analyzer-ai-l7d7.onrender.com" title="Resume Analyzer"></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="mt-4 text-center">
+        <p class="small text-secondary italic text-muted">*Note: Ye analyzer aapki skills ko analyze karke jobs suggest karta hai.</p>
+    </div>
+</div>
+{% endblock %}

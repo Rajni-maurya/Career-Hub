@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Portal</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .card { border-radius: 8px; border: 1px solid #ddd; margin-bottom: 20px; }
+        .card-title { font-weight: bold; color: #333; }
+        .btn-primary { background-color: #007bff; border: none; }
+        .search-container { padding: 20px; background: #fff; }
+    </style>
+</head>
+<body>
+
+<div class="container mt-4">
+    <!-- Purana Simple Search Bar -->
+    <div class="search-container border rounded mb-4">
+        <form action="/jobs" method="GET" class="row g-2">
+            <div class="col-md-5">
+                <input type="text" name="title" class="form-control" placeholder="Search Role (e.g. Java, Marketing)" value="{{ request.args.get('title', '') }}">
+            </div>
+            <div class="col-md-5">
+                <input type="text" name="location" class="form-control" value="Lucknow" readonly>
+            </div>
+            <div class="col-md-2">
+                <button type="submit" class="btn btn-primary w-100">Search</button>
+            </div>
+        </form>
+    </div>
+
+    <div class="row">
+        {% for job in jobs %}
+        <div class="col-md-6"> <!-- 2 cards in a row as per your old screenshot -->
+            <div class="card p-3 shadow-sm">
+                <h4 class="card-title">{{ job.title }}</h4>
+                <p class="text-muted mb-1">{{ job.company }} • {{ job.loc }}</p>
+                
+                <p><strong>Experience:</strong></p>
+                
+                <div class="mt-3">
+                    <a href="{{ job.link }}" target="_blank" class="btn btn-primary w-100">
+                        View Details
+                    </a>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,12 @@
+/* Custom Scrollbar for Chat */
+#chatBody::-webkit-scrollbar { width: 5px; }
+#chatBody::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 10px; }
+
+.navbar-brand { letter-spacing: 1px; }
+
+.card { transition: transform 0.2s ease; }
+.card:hover { transform: translateY(-5px); }
+
+/* Animation for Chat Icon */
+#chat-icon { transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275); }
+#chat-icon:hover { transform: scale(1.1) rotate(5deg); }
